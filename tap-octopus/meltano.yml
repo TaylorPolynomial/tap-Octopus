@@ -15,12 +15,26 @@ plugins:
     - discover
     - about
     - stream-maps
-    config:
-      start_date: '2024-07-01'
-      granularity: day
-      api_key: ${API_KEY}
-      password: ${PASSWORD}
-      base_url: https://api.octopus.energy/v1/
+    settings:
+    - name: granularity
+      kind: string
+    - name: api_key 
+      kind: string 
+      sensitive: true
+    - name: password 
+      kind: string
+      sensitive: true
+    - name: base_url 
+      kind: string
+    - name: start_date 
+      kind: date_iso8601 
+    - name: electric_endpoint 
+      kind: string  
+      sensitive: true 
+    - name: gas_endpoint 
+      kind: string 
+      sensitive: true
+
   loaders:
   - name: target-jsonl
     variant: andyh1203
