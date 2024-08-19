@@ -23,9 +23,13 @@ SCHEMAS_DIR = importlib_resources.files(__package__) / "schemas"
 
 class ElectricStream(OctopusStream):
     """Define custom stream."""
+    def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)  # Initialize the parent class
+            self.path = self.config.get('electric_endpoint')
 
+    def endpoint(self):
+        return self.path
     name = "electric"
-    path = "" # TODO: Enter electric consumption path
     # primary_keys: t.ClassVar[list[str]] = ["id"]
     replication_key = "interval_end"
     is_sorted = True 
@@ -50,9 +54,13 @@ class ElectricStream(OctopusStream):
 
 class GasStream(OctopusStream):
     """Define custom stream."""
+    def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)  # Initialize the parent class
+            self.path = self.config.get('gas_endpoint')
 
+    def endpoint(self):
+        return self.path
     name = "gas"
-    path = "" # TODO: Enter gas consumption path
     # primary_keys: t.ClassVar[list[str]] = ["id"]
     replication_key = "interval_end"
     is_sorted = True 
