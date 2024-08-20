@@ -8,7 +8,7 @@ plugins:
   extractors:
   - name: tap-octopus
     namespace: tap_octopus
-    pip_url: -e .
+    pip_url: tap-octopus
     capabilities:
     - state
     - catalog
