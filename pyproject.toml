@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tap-octopus"
-version = "0.0.1"
+version = "0.0.2"
 description = "Singer tap for Octopus, built with the Meltano Singer SDK."
 readme = "README.md"
 authors = ["damien harley <damienkharley@gmail.com>"]
