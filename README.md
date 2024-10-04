@@ -129,3 +129,19 @@ meltano elt tap-octopus target-jsonl
 
 See the [dev guide](https://sdk.meltano.com/en/latest/dev_guide.html) for more instructions on how to use the SDK to
 develop your own taps and targets.
+
+
+### Example Meltano.yml
+
+version: 1.0
+plugins:
+  extractors:
+  - name: tap-octopus
+    pip_url: tap-octopus
+    config:
+      granularity: day
+      start_date: '2024-07-01 00:00:00+00:00'    # 📅 Data extraction start date in iso8601 timezone aware format
+      base_url: https://api.octopus.energy/v1/  # 🐙 API endpoint for data source
+    metadata:
+      interval_end:
+        replication-method: INCREMENTAL
