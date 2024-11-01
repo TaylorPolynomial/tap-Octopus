@@ -132,7 +132,7 @@ develop your own taps and targets.
 
 
 ### Example Meltano.yml
-
+```
 version: 1.0
 plugins:
   extractors:
@@ -145,3 +145,4 @@ plugins:
     metadata:
       interval_end:
         replication-method: INCREMENTAL
+```
